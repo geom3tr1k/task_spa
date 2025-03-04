@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRoute, useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 import  API  from '../../config'
 
 const router = useRouter()
@@ -21,7 +21,7 @@ async function logOut(){
 
 
 <div
-        class="d-flex flex-column h-100 flex-shrink-0 p-3 text-white bg-dark"
+        class="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark"
         style="width: 280px"
       >
         <RouterLink
@@ -29,13 +29,13 @@ async function logOut(){
           class="d-flex align-items-center mb-3 gap-3 mb-md-0 me-md-auto text-white text-decoration-none"
         >
           <img src="./static/icon.svg" style="width: 30px" alt="" />
-          <span class="fs-4">File Storage</span>
+          <span class="fs-4">Task Storage</span>
         </RouterLink>
         <hr />
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
             <RouterLink
-              to="./files-list.html"
+              to="/"
               class="nav-link text-white d-flex align-items-center gap-2"
             >
               <svg
@@ -54,33 +54,10 @@ async function logOut(){
               Мои файлы
             </RouterLink>
           </li>
+         
           <li class="nav-item">
             <RouterLink
-              to="./files-shared.html"
-              class="nav-link text-white d-flex align-items-center gap-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="16"
-                height="16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z"
-                  clip-rule="evenodd"
-                />
-                <path
-                  d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z"
-                />
-              </svg>
-              Общие файлы
-            </RouterLink>
-          </li>
-          <li class="nav-item">
-            <RouterLink
-              to="./files-upload.html"
+              to="/add"
               class="nav-link text-white d-flex align-items-center gap-2"
             >
               <svg

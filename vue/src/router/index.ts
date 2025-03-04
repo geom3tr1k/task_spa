@@ -4,6 +4,9 @@ import '../assets/bootstrap.min.css'
 import '../assets/bootstrap.min.js'
 import TaskListViews from '@/views/TaskListViews.vue'
 import RegisterViews from '@/views/RegisterViews.vue'
+import TaskAddViews from '@/views/TaskAddViews.vue'
+import EditTasjViews from '@/views/EditTasjViews.vue'
+import TaskAcessViews from '@/views/TaskAcessViews.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +25,21 @@ const router = createRouter({
       path: '/register',
       name: 'reg',
       component: RegisterViews,
+    },
+    {
+      path: '/add',
+      name: 'Add',
+      component: TaskAddViews,
+    },
+    {
+      path: '/edit/:id',
+      name: 'Edit',
+      component: EditTasjViews,
+    },
+    {
+      path: '/access/:id',
+      name: 'Acess',
+      component: TaskAcessViews,
     },
  
   ],

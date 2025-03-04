@@ -205,4 +205,28 @@ class TaskController extends Controller
         };      
         
     }
+
+    public function getCol(Request $request, $taskId) {
+        $task = Task::with('users:id,email') 
+            ->where('id', $taskId)
+            ->first(); 
+    
+        if (!$task) {
+            return response()->json([
+                "status" => 404,
+                "message" => "Task not found"
+            ], 404);
+        }
+    
+    
+        return response()->json([
+            "collaborators" => $task->users
+                ->where('id', '!=', $task->creator) // Исключаем автора
+                ->map(fn($user) => [
+                    "id" => $user->id,
+                    "email" => $user->email
+                ])
+                ->values() // Сбрасываем индексы
+        ]);
+    }
 }

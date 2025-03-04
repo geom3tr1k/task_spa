@@ -17,7 +17,10 @@ Route::post('/logout', [AuthController::class, 'logOut'])->middleware('auth:sanc
 Route::get("/tasks/disk", [TaskController::class, "disk"])->middleware('auth:sanctum');
 
 Route::post('/tasks', [TaskController::class, 'addTasks'])->middleware('auth:sanctum') ;
+Route::post('tasks/{taskId}/collaborators', [TaskController::class, 'addUser']) ->middleware('auth:sanctum') ;
+Route::delete('tasks/{taskId}/collaborators', [TaskController::class, 'deleteUser']) ->middleware('auth:sanctum') ;
 Route::post('/tasks/{id}', [TaskController::class, 'uploadTasks'])->middleware('auth:sanctum') ;
 Route::delete('/tasks/{id}', [TaskController::class, 'deleteTask'])->middleware('auth:sanctum') ;
 
+Route::middleware('auth:sanctum')->get('/tasks/{taskId}/col', [TaskController::class, 'getCol']);
 Route::middleware('auth:sanctum')->get('/tasks/{taskId}', [TaskController::class, 'getTask']);

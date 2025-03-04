@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import API from '../../config';
 import router from '@/router';
+import { RouterLink } from 'vue-router';
 
 
 const firstName = ref('')
@@ -158,7 +159,7 @@ async function register() {
           </div>
         </main>
         <div class="mt-4">
-          Уже есть аккаунт? <a href="./login.html">Войти</a>
+          Уже есть аккаунт? <RouterLink to="/login">Войти</RouterLink>
         </div>
         <footer class="my-3 pt-3 text-muted text-center text-small">
           <p>© 2021-2024 File Storage</p>
